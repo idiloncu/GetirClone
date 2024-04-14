@@ -8,45 +8,15 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.getirclone.R
 import com.example.getirclone.data.entity.Ekurunler
-import com.example.getirclone.data.entity.Reklamlar
 import com.example.getirclone.databinding.FragmentAnasayfaBinding
 import com.example.getirclone.ui.adapter.EkurunlerAdapter
-import com.example.getirclone.ui.adapter.ReklamlarAdapter
 
-class AnasayfaFragment : Fragment() {
+class EkFragment : Fragment() {
 
     private lateinit var binding: FragmentAnasayfaBinding
-    private lateinit var reklamListesi:ArrayList<Reklamlar>
-    private lateinit var adapter: ReklamlarAdapter
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding= FragmentAnasayfaBinding.inflate(inflater,container,false)
-        binding.textViewAnabaslik.text="getir"
-
-        binding.rv.layoutManager=StaggeredGridLayoutManager(1,StaggeredGridLayoutManager.HORIZONTAL)
-        val reklamListesi=ArrayList<Reklamlar>()
-        val r1 = Reklamlar(1,"Reklam1","reklam1")
-        val r2 = Reklamlar(2,"Reklam2","reklam2")
-        val r3 = Reklamlar(3,"Reklam3","reklam3")
-        val r4 = Reklamlar(4,"Reklam4","reklam4")
-        val r5 = Reklamlar(5,"Reklam5","reklam5")
-        val r6 = Reklamlar(6,"Reklam6","reklam6")
-        val r7 = Reklamlar(7,"Reklam7","reklam7")
-        val r8 = Reklamlar(8,"Reklam8","reklam8")
-        val r9 = Reklamlar(9,"Reklam9","reklam9")
-        reklamListesi.add(r1)
-        reklamListesi.add(r2)
-        reklamListesi.add(r3)
-        reklamListesi.add(r4)
-        reklamListesi.add(r5)
-        reklamListesi.add(r6)
-        reklamListesi.add(r7)
-        reklamListesi.add(r8)
-        reklamListesi.add(r9)
-
-        val reklamlarAdapter=ReklamlarAdapter(requireContext(),reklamListesi)
-        binding.rv.adapter=reklamlarAdapter
-
-     /*   binding.rv.layoutManager=StaggeredGridLayoutManager(1,StaggeredGridLayoutManager.HORIZONTAL)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
+    {
+        binding.rv.layoutManager= StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
         val ekListe=ArrayList<Ekurunler>()
         val e1=Ekurunler(1,"ek1","atistirmalik")
         val e2=Ekurunler(2,"ek2","dondurma")
@@ -79,14 +49,13 @@ class AnasayfaFragment : Fragment() {
         ekListe.add(e14)
         ekListe.add(e15)
 
-        val ekAdapter=EkurunlerAdapter(requireContext(),ekListe)
+        val ekAdapter= EkurunlerAdapter(requireContext(),ekListe)
         binding.rv.adapter=ekAdapter
-*/
+
 
 
 
         return binding.root
     }
 
-
-}
+    }
