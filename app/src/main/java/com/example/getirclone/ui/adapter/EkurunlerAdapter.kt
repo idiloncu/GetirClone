@@ -11,9 +11,8 @@ class EkurunlerAdapter(var mContext: Context, var ekListe: List<Ekurunler>)
     :RecyclerView.Adapter<EkurunlerAdapter.CardTasarimTutucu>() {
     inner class CardTasarimTutucu(var tasarim: CardTasarimBinding):RecyclerView.ViewHolder(tasarim.root){
 
+
     }
-
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardTasarimTutucu {
         val binding=CardTasarimBinding.inflate(LayoutInflater.from(mContext),parent,false)
         return CardTasarimTutucu(binding)

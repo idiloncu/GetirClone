@@ -12,17 +12,21 @@ import com.example.getirclone.databinding.CardTasarimBinding
 class ReklamlarAdapter(var mContext: Context,var reklamListesi: List<Reklamlar>)
     :RecyclerView.Adapter<ReklamlarAdapter.CardTasarimTutucu>(){
 
-    inner class CardTasarimTutucu(var tasarim:CardTasarimBinding):RecyclerView.ViewHolder(tasarim.root)
-    lateinit var cardViewAd : CardView
-    lateinit var imageViewAdImage : ImageView
+    inner class CardTasarimTutucu(var tasarim:CardTasarimBinding):RecyclerView.ViewHolder(tasarim.root){
+        var cardViewAd : CardView
+        var imageViewAdImage : ImageView
+        init {
+            cardViewAd=tasarim.cardViewReklam
+            imageViewAdImage=tasarim.imageView
 
-    init {
-        //cardViewAd = binding.cardViewCategori
-        //imageViewAdImage = tasarim.imageViewCategoriImage
+        }
     }
+
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardTasarimTutucu {
-        val binding=CardTasarimBinding.inflate(LayoutInflater.from(mContext),parent,false)
-        return CardTasarimTutucu(binding)
+        val tasarim=CardTasarimBinding.inflate(LayoutInflater.from(mContext),parent,false)
+        return CardTasarimTutucu(tasarim)
 
     }
     override fun onBindViewHolder(holder: CardTasarimTutucu, position: Int) {
