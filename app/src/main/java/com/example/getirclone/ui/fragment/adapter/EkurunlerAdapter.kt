@@ -1,4 +1,4 @@
-package com.example.getirclone.ui.adapter
+package com.example.getirclone.ui.fragment.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -19,12 +19,12 @@ class EkurunlerAdapter(var mContext: Context, var ekListe: List<Ekurunler>)
 
     }
 
-    override fun onBindViewHolder(holder: EkurunlerAdapter.CardTasarimTutucu, position: Int) {
+    override fun onBindViewHolder(holder: CardTasarimTutucu, position: Int) {
         val ekreklam=ekListe.get(position)
         val t =holder.tasarim
 
-        t.imageView.setImageResource(
-            mContext.resources.getIdentifier(ekreklam.resimmini,"drawable",mContext.packageName))
+        t.imageViewCategoriImage.setImageResource(
+            mContext.resources.getIdentifier(ekreklam.categoriImage,"drawable",mContext.packageName))
     }
 
     override fun getItemCount(): Int {

@@ -1,4 +1,4 @@
-package com.example.getirclone.ui.adapter
+package com.example.getirclone.ui.fragment.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -16,14 +16,11 @@ class ReklamlarAdapter(var mContext: Context,var reklamListesi: List<Reklamlar>)
         var cardViewAd : CardView
         var imageViewAdImage : ImageView
         init {
-            cardViewAd=tasarim.cardViewReklam
-            imageViewAdImage=tasarim.imageView
+            cardViewAd=tasarim.cardViewKategori
+            imageViewAdImage=tasarim.imageViewCategoriImage
 
         }
     }
-
-
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardTasarimTutucu {
         val tasarim=CardTasarimBinding.inflate(LayoutInflater.from(mContext),parent,false)
         return CardTasarimTutucu(tasarim)
@@ -33,7 +30,7 @@ class ReklamlarAdapter(var mContext: Context,var reklamListesi: List<Reklamlar>)
         val reklam=reklamListesi.get(position)
         val t =holder.tasarim
 
-        t.imageView.setImageResource(
+        t.imageViewCategoriImage.setImageResource(
             mContext.resources.getIdentifier(reklam.resim,"drawable",mContext.packageName))
 
 
